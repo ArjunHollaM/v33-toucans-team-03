@@ -1,14 +1,39 @@
-# voyage-tasks
+# Chingu-pen
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+Chingu-pen is a new online code editor based on web development. Instead of installing different IDEs just to test out a perticular website's layouts and designs..you can just visit our website online and enter your code. This makes your job much easier when you have to create a website just to view the design. You can implement your different ideas or to test your web development skills just by writing your code in this new online code editor which gives you the preview of your desired website.
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
+## How to use ?
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+* There are three text boxes namely HTML,CSS and Java Script.
+* Write your HTML,CSS and Java Script codes in those respective text boxes and click run.
+That is it. Have fun!
 
-> Own it & Make it your Own!
+## Installation
+
+1.Fork the repository to your Github account with the Fork option at the top right of the screen
+
+2.Clone the Project to your local environment by copying the url of the repositiory `git clone`
+
+3.Get into the project repo by `cd v33-toucans-team-03`
+
+4.Install all the dependencies using the npm packages `npm install`
+
+5.Start the local environment server using `npm start`
+
+## Screenshots
+
+## Contribution Guidelines
+
+We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
+
+* Reporting a bug
+* Discussing the current state of the code
+* Submitting a fix
+* Proposing new features
+* Becoming a maintainer
+
+In order to help new open souce enthusiast to contribute, you can find some "good first issue" in the issues section or create one for yourself</i>
+
+### Hosting
+
+We will host it soon
