@@ -48,7 +48,7 @@ function App() {
       <Switch>
         <Route exact={true} path="/">
         <Navbar location={"home"} func={run} clr={clear} />
-          <div className="container">
+          <div className="container1">
             <div className='Editors'>
               <Editor id='html' html={s_html} placeholder='Write HTML code here' editorTitle = "HTML" click={html} />
               <Editor id='css' css={s_css} placeholder='Write CSS code here' editorTitle = "CSS" click={css} />

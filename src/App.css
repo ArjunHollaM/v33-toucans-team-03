@@ -84,7 +84,7 @@ iframe {
   height: 841px;
   width: 100%;
 }
-.container{
+.container1{
   display: flex;
 }
 .titles {
@@ -126,7 +126,7 @@ button:hover{
   margin-bottom: 5px;
 }
 @media only screen and (max-width : 768px) {
-  .container{
+  .container1{
     display: grid; 
     grid-template-columns: 100%;
     grid-template-areas: 
@@ -173,3 +173,4 @@ button:hover{
 .SML {
   padding-top: 10px;
 }
+

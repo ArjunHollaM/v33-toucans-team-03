@@ -6,6 +6,10 @@ function Navbar(props) {
         <div className="navbar">
         <h1>Chingu 🖊️</h1>
         <div className="navbar-button">
+            <div className="form-check form-switch">
+                <input className="form-check-input" type="checkbox" id="flexSwitchCheckDefault" />
+                <label className="form-check-label" for="flexSwitchCheckDefault"></label>
+            </div>
             <button><Link to={props.location === "home" ? "/fullpage" : "/"}><i className="fa fa-expand fa-lg"></i> {props.location === "home" ? "Full Screen" : "Home screen"} </Link></button> 
             <button onClick={props.func}><i className="fa fa-retweet fa-lg"></i>Run</button>
             <button onClick={props.clr}><i className="fa fa-trash" style={{fontSize:'1rem'}}></i>Clear All</button>

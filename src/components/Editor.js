@@ -15,7 +15,7 @@ const Editor = (props) => {
 
     const eraseText = (e) => {
         console.log(e)
-        setValue(" ");
+        setValue("");
         props.click(e)
     }
     
