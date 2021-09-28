@@ -22,6 +22,12 @@ textarea {
   background: linear-gradient(to right, rgb(137, 121, 228), rgb(222, 222, 222));
   margin-bottom: 4px;
 }
+
+.navbar-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .navbar-button button{
   padding: 10px 12px;
   border-radius: 4px;
@@ -52,9 +58,9 @@ textarea {
 
 
 .opened {
-  background-color: rgb(86, 81, 104);
-  border-color: rgb(31, 28, 65);
-  color: white;
+  background-color: rgb(193, 164, 230);
+  border-color: rgb(57, 29, 71);
+  color: black;
   font: 'Raleway',sans-serif;
   height: 215px;
   width: 90%;
@@ -173,4 +179,3 @@ button:hover{
 .SML {
   padding-top: 10px;
 }
-

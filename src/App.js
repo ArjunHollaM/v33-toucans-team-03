@@ -12,6 +12,10 @@ import Navbar from './components/Navbar';
 
 
 function App() {
+  //
+  const [mode,setMode] = useState("light")
+
+
   const [s_html, setHTML] = useState("")
   const [s_css, setCSS] = useState("")
   const [s_js, setJS] = useState("")
@@ -41,22 +45,36 @@ function App() {
     setCSS("")
     setJS("")
   }
+
+  const changeMode = () =>{
+    console.log("clicked")
+    if(mode === "light"){
+      setMode("dark")
+    }
+    else{
+      setMode("light")
+    }
+  }
+  let editorStyle = {}
+  if(mode === "dark") {
+      editorStyle = {background:"rgb(41, 41, 41)"} 
+  } 
   
 
   return (
     <Router>
       <Switch>
         <Route exact={true} path="/">
-        <Navbar location={"home"} func={run} clr={clear} />
+        <Navbar location={"home"} func={run} clr={clear} mode={mode} changeMode={changeMode} />
           <div className="container1">
-            <div className='Editors'>
-              <Editor id='html' html={s_html} placeholder='Write HTML code here' editorTitle = "HTML" click={html} />
-              <Editor id='css' css={s_css} placeholder='Write CSS code here' editorTitle = "CSS" click={css} />
-              <Editor id='js' js={s_js} placeholder='Write JavaScript code here' editorTitle = "JavaScript" click={js} />
+            <div className='Editors' style={editorStyle}>
+              <Editor id='html' html={s_html} placeholder='Write HTML code here' editorTitle = "HTML" click={html} mode={mode} changeMode={changeMode}/>
+              <Editor id='css' css={s_css} placeholder='Write CSS code here' editorTitle = "CSS" click={css} mode={mode} changeMode={changeMode}/>
+              <Editor id='js' js={s_js} placeholder='Write JavaScript code here' editorTitle = "JavaScript" click={js} mode={mode} changeMode={changeMode}/>
             </div>
-            <Frame html={s_html} css={s_css} js={s_js} location={"home"}/>
+            <Frame html={s_html} css={s_css} js={s_js} location={"home"} />
           </div>
-          <Footer />
+          <Footer mode={mode} changeMode={changeMode} />
         </Route>
         <Route exact={true} path="/fullpage">
         <Navbar location={"Full"} func={run}/>
