@@ -2,8 +2,26 @@ const Footer = (props) => {
     let footerStyle = {}
     if (props.mode === "dark") {
         footerStyle= {
-            color :'rgb(255, 255, 255)',
-            backgroundColor: 'rgb(0, 0, 0)'
+            color :'rgb(237, 237, 237)',
+            backgroundColor: 'rgb(23, 23, 23)'
+        }
+    }
+    else if ( props.mode === "space" ) {
+        footerStyle= {
+            color :'white',
+            backgroundColor: 'rgb(8, 32, 50)'
+        }
+    }
+    else if ( props.mode === "neon" ) {
+        footerStyle= {
+            color :'white',
+            backgroundColor: 'rgb(82, 5, 123)'
+        }
+    }
+    else if ( props.mode === "retro" ) {
+        footerStyle= {
+            color :'rgb(86, 74, 74)',
+            backgroundColor: 'rgb(74, 169, 108)'
         }
     }
     return (

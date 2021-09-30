@@ -4,16 +4,78 @@ import {Link} from 'react-router-dom'
 function Navbar(props) {
     let style={}
     let style1={
+        background: "rgb(157, 148, 240)",
         color:'Black'
     }
-    if(props.mode === "dark"){
+    let dropdownStyle = {}
+    if(props.mode === "light") {
+        dropdownStyle = {
+            background:'rgb(157, 148, 240)',
+            borderColor:'rgb(157, 148, 240)',
+            color: 'black'
+        }
+    }
+    else if(props.mode === "dark"){
         style={
-            background:"linear-gradient(to right, rgb(0,0,0), rgb(222, 222, 222))",
+            background:"linear-gradient(to right, rgb(23, 23, 23), rgb(68, 68, 68))",
             color: 'white'
         }
         style1={
-            background:'rgb(75, 75, 75)',
-            borderColor:'rgb(75, 75, 75)',
+            background:'rgb(218, 0, 55)',
+            borderColor:'rgb(218, 0, 55)',
+            color: 'white'
+        }
+        dropdownStyle = {
+            background:'rgb(68, 68, 68)',
+            borderColor:'rgb(68, 68, 68)',
+            color: 'white'
+        }
+    }
+    else if (props.mode === "space") {
+        style={
+            background:"linear-gradient(to right, rgb(8, 32, 50), rgb(51, 71, 86))",
+            color: 'white'
+        }
+        style1={
+            background:'rgb(255, 76, 41)',
+            borderColor:'rgb(255, 76, 41)',
+            color: 'white'
+        }
+        dropdownStyle = {
+            background:'rgb(51, 71, 86)',
+            borderColor:'rgb(51, 71, 86)',
+            color: 'white'
+        }
+    }
+    else if (props.mode === "neon") {
+        style={
+            background:"linear-gradient(to right, rgb(82, 5, 123), rgb(137, 44, 220))",
+            color: 'white'
+        }
+        style1={
+            background:'rgb(0, 0, 0)',
+            borderColor:'rgb(0, 0, 0)',
+            color: 'white'
+        }
+        dropdownStyle = {
+            background:'rgb(137, 44, 220)',
+            borderColor:'rgb(137, 44, 220)',
+            color: 'white'
+        }
+    }
+    else if (props.mode === "retro") {
+        style={
+            background:"linear-gradient(to right, rgb(74, 169, 108), rgb(159, 230, 160))",
+            color: 'rgb(86, 74, 74)'
+        }
+        style1={
+            background:'rgb(245, 92, 71)',
+            borderColor:'rgb(245, 92, 71)',
+            color: 'black'
+        }
+        dropdownStyle = {
+            background:'rgb(86, 74, 74)',
+            borderColor:'rgb(86, 74, 74)',
             color: 'white'
         }
     }
@@ -24,9 +86,17 @@ function Navbar(props) {
             <button style={style1}><Link to={props.location === "home" ? "/fullpage" : "/"} style={style1}><i className="fa fa-expand fa-lg"></i> {props.location === "home" ? "Full Screen" : "Home screen"} </Link></button> 
             <button onClick={props.func} style={style1}><i className="fa fa-retweet fa-lg"></i>Run</button>
             <button onClick={props.clr} style={style1}><i className="fa fa-trash" style={{fontSize:'1rem'}}></i>Clear All</button>
-            <div className="form-check form-switch">
-                <input className="form-check-input" onClick={props.changeMode} type="checkbox" id="flexSwitchCheckDefault" />
-                <label className="form-check-label" for="flexSwitchCheckDefault">Mode</label>
+            <div className="dropdown">
+                <button className="btn dropdown-toggle" type="button" id="dropdownMenuButton1" style={style1} data-bs-toggle="dropdown" aria-expanded="false">
+                    Select Theme
+                </button>
+                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><i className="dropdown-item" onClick={props.setModeToLight} style={dropdownStyle}>Default(light)</i></li>
+                    <li><i className="dropdown-item" onClick={props.setModeToDark} style={dropdownStyle}>Dark</i></li>
+                    <li><i className="dropdown-item" onClick={props.setModeToSpace} style={dropdownStyle}>Space</i></li>
+                    <li><i className="dropdown-item" onClick={props.setModeToNeon} style={dropdownStyle}>Neon</i></li>
+                    <li><i className="dropdown-item" onClick={props.setModeToRetro} style={dropdownStyle}>Retro</i></li>
+                </ul>
             </div>
         </div>
             

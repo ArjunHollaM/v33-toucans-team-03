@@ -46,35 +46,61 @@ function App() {
     setJS("")
   }
 
-  const changeMode = () =>{
-    console.log("clicked")
-    if(mode === "light"){
-      setMode("dark")
-    }
-    else{
-      setMode("light")
-    }
+  const setModeToDark = () => {
+    setMode("dark");
+  }
+  const setModeToLight = () => {
+    setMode("light")
+  }
+  const setModeToSpace = () => {
+    setMode("space");
+  }
+  const setModeToNeon = () => {
+    setMode("neon");
+  }
+  const setModeToRetro = () => {
+    setMode("retro");
   }
   let editorStyle = {}
   if(mode === "dark") {
-      editorStyle = {background:"rgb(41, 41, 41)"} 
+      editorStyle = {background:"#363636"} 
   } 
+  if (mode === "space" ) {
+    editorStyle = {background:"#2C394B"}
+  }
+  if (mode === "neon" ) {
+    editorStyle = {background:"rgb(137, 44, 220)"}
+  }
+  if (mode === "retro" ) {
+    editorStyle = {background:"rgb(86, 74, 74)"}
+  }
+  
   
 
   return (
     <Router>
       <Switch>
         <Route exact={true} path="/">
-        <Navbar location={"home"} func={run} clr={clear} mode={mode} changeMode={changeMode} />
+        <Navbar 
+          location={"home"} 
+          func={run} 
+          clr={clear} 
+          mode={mode} 
+          setModeToDark={setModeToDark} 
+          setModeToLight={setModeToLight} 
+          setModeToSpace={setModeToSpace}
+          setModeToNeon={setModeToNeon}
+          setModeToRetro={setModeToRetro}
+        />
           <div className="container1">
             <div className='Editors' style={editorStyle}>
-              <Editor id='html' html={s_html} placeholder='Write HTML code here' editorTitle = "HTML" click={html} mode={mode} changeMode={changeMode}/>
-              <Editor id='css' css={s_css} placeholder='Write CSS code here' editorTitle = "CSS" click={css} mode={mode} changeMode={changeMode}/>
-              <Editor id='js' js={s_js} placeholder='Write JavaScript code here' editorTitle = "JavaScript" click={js} mode={mode} changeMode={changeMode}/>
+              <Editor id='html' html={s_html} placeholder='Write HTML code here' editorTitle = "HTML" click={html} mode={mode} />
+              <Editor id='css' css={s_css} placeholder='Write CSS code here' editorTitle = "CSS" click={css} mode={mode} />
+              <Editor id='js' js={s_js} placeholder='Write JavaScript code here' editorTitle = "JavaScript" click={js} mode={mode} />
             </div>
             <Frame html={s_html} css={s_css} js={s_js} location={"home"} />
           </div>
-          <Footer mode={mode} changeMode={changeMode} />
+          <Footer mode={mode} setModeToDark={setModeToDark} setModeToLight={setModeToLight}/>
         </Route>
         <Route exact={true} path="/fullpage">
         <Navbar location={"Full"} func={run}/>
