@@ -40,7 +40,6 @@ function App() {
     
   }
   const clear=()=>{
-    console.log("clear")
     setHTML("")
     setCSS("")
     setJS("")
@@ -103,9 +102,17 @@ function App() {
           <Footer mode={mode} setModeToDark={setModeToDark} setModeToLight={setModeToLight}/>
         </Route>
         <Route exact={true} path="/fullpage">
-        <Navbar location={"Full"} func={run}/>
+        <Navbar location={"Full"} func={run}
+          clr={clear} 
+          mode={mode} 
+          setModeToDark={setModeToDark} 
+          setModeToLight={setModeToLight} 
+          setModeToSpace={setModeToSpace}
+          setModeToNeon={setModeToNeon}
+          setModeToRetro={setModeToRetro}
+        />
           <Frame html={s_html} css={s_css} js={s_js}  />
-          <Footer/>
+          <Footer setModeToDark={setModeToDark} setModeToLight={setModeToLight}/>
         </Route>
       </Switch>
     </Router>
