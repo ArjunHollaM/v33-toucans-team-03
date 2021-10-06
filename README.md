@@ -22,6 +22,21 @@ That is it. Have fun!
 
 ## Screenshots
 
+This is what you will see when you visit our website..
+---Screenshot---
+
+All you have to do is write your code in these respective html,css and java script editors and click on the 'Run' button. This will give you the output on the right side of the page. Below if you are using your mobile.
+---Screenshot---
+
+We also have cool new editor themes which you can select as per your liking for the best experience while coding! 
+---Screenshot---
+
+Do you want to see your design in full screen? we've got it covered. Just click on the 'Full screen' button after running your code.
+---Screenshot---
+
+If you want to scrap the design you just created/ test a new one then click on 'Clear Design' button and update your code in the editor. There are separate clear buttons for each of the editors just so you want to delete your code completely and start over.
+---Screenshot---
+
 ## Contribution Guidelines
 
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
@@ -36,4 +51,7 @@ In order to help new open souce enthusiast to contribute, you can find some "goo
 
 ### Hosting
 
-We will host it soon
+The following link will take you directly to our website by clicking on it or you can copy and paste this link on your browser
+https://chingu-pen.herokuapp.com/  
+
+Happy Coding!
