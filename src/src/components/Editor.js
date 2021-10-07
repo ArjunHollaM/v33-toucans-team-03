@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
 const Editor = (props) => {
-    const { id, html, css, js, placeholder, editorTitle, click, mode } = props;
     let titleStyle = {}
-    let btnStyle={color:'Black'}
+    let btnStyle={
+        color:'Black'
+    }
     let textareaStyle = {}
 
-    if (mode === "dark") {
+    if (props.mode === "dark") {
         titleStyle = {
             background: 'rgb(23, 23, 23)',
             color: "white"
@@ -22,7 +23,7 @@ const Editor = (props) => {
             color : 'white'
         }
     }
-    else if ( mode === "space") {
+    else if ( props.mode === "space") {
         titleStyle = {
             background: 'rgb(8, 32, 50)',
             color: "white"
@@ -38,7 +39,7 @@ const Editor = (props) => {
             color : 'white'
         }
     }
-    else if ( mode === "neon") {
+    else if ( props.mode === "neon") {
         titleStyle = {
             background: 'rgb(82, 5, 123)',
             color: "white"
@@ -54,7 +55,7 @@ const Editor = (props) => {
             color : 'black'
         }
     }
-    else if ( mode === "retro") {
+    else if ( props.mode === "retro") {
         titleStyle = {
             background: 'rgb(74, 169, 108)',
             color: "black"
@@ -71,30 +72,34 @@ const Editor = (props) => {
         }
     }
 
-    const [value, setValue] = useState(html || css || js);
+    const [value, setValue] = useState(props.html || props.css || props.js);
     const [isOpen, setOpen] = useState(true);
 
     const changeValue = (e) => {
         setValue(e.target.value)
-        click(e)
+        props.click(e)
     }
-    const handleToggle = () => setOpen(!isOpen);
+    
+    const handleToggle = () => {
+        setOpen(!isOpen);
+    }
 
     const eraseText = (e) => {
         console.log(e)
         setValue("");
-        click(e)
+        props.click(e)
     }
     
+
     return (
         <div className="AllEditors">
-            <div className="titles" style={titleStyle}>{editorTitle}
+            <div className="titles" style={titleStyle}>{props.editorTitle}
                 <div>
                     <button id="clr" onClick={eraseText} style={btnStyle}>Clear</button>
-                    <button onClick={handleToggle} style={btnStyle}>{isOpen ? "[-]" : "[+]"}</button>
+                    <button onClick={handleToggle} style={btnStyle}>{isOpen ? <i className="fa fa-minus-square"></i> : <i className="fa fa-plus-square"></i>}</button>
                 </div>
             </div>
-            <textarea className={`${isOpen ? "opened" : "closed"} editor`} value={value} onChange={changeValue} id={id} placeholder={placeholder} style={textareaStyle}></textarea>
+            <textarea className={`${isOpen ? "opened" : "closed"} editor`} value={value} onChange={changeValue} row="7" id={props.id} placeholder={props.placeholder} style={textareaStyle}></textarea>
         </div>
     );
 }

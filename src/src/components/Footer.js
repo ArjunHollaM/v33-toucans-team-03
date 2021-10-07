@@ -28,13 +28,13 @@ const Footer = (props) => {
     return (
         <footer id="main-footer" className="grid" style={footerStyle}>
             <div className="footer-copyrights">
-                <h3><i className = "fa fa-copyright" style={{fontSize:'1rem'}}></i><i>2021ChinguPen</i></h3>
-                <h4>About | Contribute | FAQs</h4>
+                <h3><i className = "fa fa-copyright" style={{fontSize:'1rem'}}></i><i>Chingu voyage 33</i></h3>
+                <p> <a href="https://www.chingu.io" target="_blank" rel="noreferrer">About</a> | <a href="https://github.com/chingu-voyages/v33-toucans-team-03" target="_blank" rel="noreferrer">Contribute</a> | FAQs</p>
             </div>
             <div className = "SML">
-				<i className="fa fa-linkedin" style={{fontSize:'25px',margin:'10px'}}></i>
-				<a className="fa fa-twitter" href="https://twitter.com/ChinguCollabs"  target="_blank" rel="noreferrer" style={{fontSize:'25px',margin:'10px'}}></a>
-                <i className="fa fa-github" style={{fontSize:'25px',margin:'10px'}}></i>
+				<a href="https://www.linkedin.com/company/chingu-os/" target="_blank" rel="noreferrer"><i className="fa fa-linkedin" style={{fontSize:'25px',margin:'10px'}}></i></a>
+				<a href="https://twitter.com/ChinguCollabs"  target="_blank" rel="noreferrer" ><i className="fa fa-twitter" style={{fontSize:'25px',margin:'10px'}}></i></a>
+                <a href="https://github.com/chingu-voyages/v33-toucans-team-03" target="_blank" rel="noreferrer"><i className="fa fa-github" style={{fontSize:'25px',margin:'10px'}}></i></a>
             </div>
         </footer>
     )
