@@ -12,19 +12,26 @@ import Navbar from './components/Navbar';
 
 
 function App() {
+
   const [mode,setMode] = useState("light")
 
   const [s_html, setHTML] = useState("")
   const [s_css, setCSS] = useState("")
   const [s_js, setJS] = useState("")
+
   const [t_html, settHTML] = useState("")
   const [t_css, settCSS] = useState("")
   const [t_js, settJS] = useState("")
+  const html = (e) => {
+    settHTML(e.target.value)
 
-  const html = (e) => settHTML(e.target.value)
-  const css = (e) => settCSS(e.target.value)
-  const js = (e) => settJS(e.target.value)
-  
+  }
+  const css = (e) => {
+    settCSS(e.target.value)
+  }
+  const js = (e) => {
+    settJS(e.target.value)
+  }
   const run=()=>{
     setHTML(t_html)
     setCSS(t_css)
@@ -37,17 +44,37 @@ function App() {
     setJS("")
   }
 
-  const setModeToDark = () => setMode("dark");
-  const setModeToLight = () => setMode("light")
-  const setModeToSpace = () => setMode("space");
-  const setModeToNeon = () => setMode("neon");
-  const setModeToRetro = () => setMode("retro");
+  const setModeToDark = () => {
+    setMode("dark");
+  }
+  const setModeToLight = () => {
+    setMode("light")
+  }
+  const setModeToSpace = () => {
+    setMode("space");
+  }
+  const setModeToNeon = () => {
+    setMode("neon");
+  }
+  const setModeToRetro = () => {
+    setMode("retro");
+  }
   let editorStyle = {}
-  if(mode === "dark") { editorStyle = {background:"#363636" }} 
-  if (mode === "space" ) {editorStyle = { background:"#2C394B" }}
-  if (mode === "neon" ) { editorStyle = {background:"rgb(137, 44, 220)" }}
-  if (mode === "retro" ) { editorStyle = {background:"rgb(86, 74, 74)" }}
+  if(mode === "dark") {
+      editorStyle = {background:"#363636"} 
+  } 
+  if (mode === "space" ) {
+    editorStyle = {background:"#2C394B"}
+  }
+  if (mode === "neon" ) {
+    editorStyle = {background:"rgb(137, 44, 220)"}
+  }
+  if (mode === "retro" ) {
+    editorStyle = {background:"rgb(86, 74, 74)"}
+  }
   
+  
+
   return (
     <Router>
       <Switch>
@@ -84,7 +111,7 @@ function App() {
           setModeToRetro={setModeToRetro}
         />
           <Frame html={s_html} css={s_css} js={s_js}  />
-          <Footer setModeToDark={setModeToDark} setModeToLight={setModeToLight}/>
+          <Footer mode={mode} setModeToDark={setModeToDark} setModeToLight={setModeToLight}/>
         </Route>
       </Switch>
     </Router>
